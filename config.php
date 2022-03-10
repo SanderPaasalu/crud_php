@@ -1,16 +1,17 @@
 <?php
+$db_server = 'sql304.epizy.com';
+$db_name = 'epiz_31199268_db';
+$db_user = 'epiz_31199268';
+$db_pass = 'Y5WvYOm7EoIwF';
 
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'demo');
+//ühendus andmebaasiga
+$yhendus = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
+//ühenduse kontroll
+if (!$yhendus) {
+    die("Failed to connect with MySQL: " . mysqli_connect_error());
+} else {
 
-/* Attempt to connect to MySQL database */
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-// Check connection
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
+
+print_r("I have reached this");
+?>
